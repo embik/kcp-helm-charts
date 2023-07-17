@@ -75,7 +75,7 @@ user `system:authenticated` access to a workspace.
 
 First we get the CA cert for the front proxy, saving it to a file `ca.crt`
 
-    kubectl get secret kcp-front-proxy-cert -o=jsonpath='{.data.tls\.crt}' | base64 -d > ca.crt
+    kubectl get secret kcp-pki-ca -o=jsonpath='{.data.ca\.crt}' | base64 -d > ca.crt
 
 Now we create a new kubeconfig which references the `ca.crt`
 

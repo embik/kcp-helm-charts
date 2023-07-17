@@ -95,7 +95,7 @@ spec:
     - "{{ .Values.externalHostname }}"
   issuerRef:
     name: {{ .Values.kcpFrontProxy.certificate.issuer }}
-    kind: ClusterIssuer
+    kind: {{ .Values.kcpFrontProxy.certificate.issuerKind }}
     group: cert-manager.io
 ---
 apiVersion: cert-manager.io/v1
