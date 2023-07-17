@@ -67,7 +67,9 @@ kcpFrontProxy:
     enabled: false
     className: ""
   certificate:
-    issuer: kcp-selfsigned-issuer
+    issuer: kcp-ca
+    # if Let's Encrypt is used, this should be ClusterIssuer.
+    issuerKind: Issuer
   profiling:
     enabled: false
     port: 6060
